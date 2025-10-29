@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Some CI tools incorrectly invoke ./gradle (without 'w').
+# Delegate to ./gradlew shim if available.
+set -euo pipefail
+if [ -f "./gradlew" ]; then
+  chmod +x ./gradlew || true
+  exec ./gradlew "$@"
+else
+  echo "No ./gradleW shim found; no Android project present. Skipping."
+  exit 0

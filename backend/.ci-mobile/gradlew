@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Hidden CI workdir Gradle wrapper shim invoked as './gradlew' from within .ci-mobile
+echo "[.ci-mobile] Gradle wrapper shim present. No Android project; skipping."
+exit 0

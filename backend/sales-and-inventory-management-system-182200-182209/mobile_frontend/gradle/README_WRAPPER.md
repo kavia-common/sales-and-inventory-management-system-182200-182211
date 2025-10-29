@@ -1,0 +1,1 @@
+This directory contains the Gradle Wrapper configuration (properties). The wrapper JAR (gradle-wrapper.jar) is fetched automatically by Gradle based on the distributionUrl in gradle/wrapper/gradle-wrapper.properties when invoking the wrapper scripts.

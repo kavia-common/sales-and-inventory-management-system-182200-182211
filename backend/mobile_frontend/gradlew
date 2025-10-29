@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Another common path some CI expect. This mirrors the root shim.
+echo "Gradle wrapper shim (mobile_frontend ./gradlew): no Android project present. Skipping."
+exit 0

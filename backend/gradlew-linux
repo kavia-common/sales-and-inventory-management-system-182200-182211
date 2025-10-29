@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Shim used by some CI runners (named gradlew-linux) to invoke Gradle
+set -euo pipefail
+bash sales-and-inventory-management-system-182200-182209/run_mobile_no_wrapper.sh "$@"

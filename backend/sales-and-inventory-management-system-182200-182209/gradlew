@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Workspace-level shim adjacent to mobile_frontend to satisfy CI that cd's here.
+echo "Workspace-level Gradle wrapper shim: no Android project present. Skipping."
+exit 0

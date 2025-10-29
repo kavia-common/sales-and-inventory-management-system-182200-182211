@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Universal Gradle shim for CI: attempts to run Gradle using multiple strategies.
+set -euo pipefail
+
+# 1) If mobile wrapper exists and is executable, use it.
+if [ -x "sales-and-inventory-management-system-182200-182209/mobile_frontend/gradlew" ]; then
+  (cd sales-and-inventory-management-system-182200-182209/mobile_frontend && ./gradlew "$@")
+  exit $?
+fi
+
+# 2) If mobile wrapper exists but not executable, chmod and run.
+if [ -f "sales-and-inventory-management-system-182200-182209/mobile_frontend/gradlew" ]; then
+  chmod +x sales-and-inventory-management-system-182200-182209/mobile_frontend/gradlew || true
+  (cd sales-and-inventory-management-system-182200-182209/mobile_frontend && ./gradlew "$@")
+  exit $?
+fi
+
+# 3) Use wrapper-less runner from repo root helper.
+if [ -x "sales-and-inventory-management-system-182200-182209/run_mobile_no_wrapper.sh" ]; then
+  bash sales-and-inventory-management-system-182200-182209/run_mobile_no_wrapper.sh "$@"
+  exit $?
+fi
+
+# 4) Last resort: call the mobile-front bootstrap (downloads wrapper jar) then run gradle task.
+if [ -x "sales-and-inventory-management-system-182200-182209/mobile_frontend/bootstrap_gradle.sh" ]; then
+  (cd sales-and-inventory-management-system-182200-182209/mobile_frontend && bash ./bootstrap_gradle.sh "$@")
+  exit $?
+fi
+
+echo "Unable to locate Gradle entrypoint. Ensure mobile_frontend exists and scripts are present."
+exit 127

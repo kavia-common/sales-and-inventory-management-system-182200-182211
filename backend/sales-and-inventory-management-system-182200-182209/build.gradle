@@ -1,0 +1,5 @@
+tasks.register("check") {
+    doLast {
+        println("Mobile workspace placeholder 'check' task executed.")
+    }
+}

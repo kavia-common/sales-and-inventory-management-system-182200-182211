@@ -1,0 +1,9 @@
+#!/bin/sh
+# Portable Gradle shim for CI environments with minimal shells (no bash).
+# Ensures the bootstrap runner is invoked via sh.
+# Usage: sh gradlew.shim.posix :mobile_frontend_app:test
+if [ -f ".ci/init.sh" ]; then
+  sh .ci/init.sh >/dev/null 2>&1 || true
+fi
+# Execute the bootstrap using sh, which then runs curl/unzip and Gradle
+exec sh run_mobile_ci_bootstrap.sh "$@"

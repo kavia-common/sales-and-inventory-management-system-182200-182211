@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# POSIX-compliant shim to satisfy CI that runs `./gradlew ...` from repo root.
+# Delegates to the wrapper-less Gradle runner for the Android project.
+set -euo pipefail
+bash sales-and-inventory-management-system-182200-182209/run_mobile_no_wrapper.sh "$@"

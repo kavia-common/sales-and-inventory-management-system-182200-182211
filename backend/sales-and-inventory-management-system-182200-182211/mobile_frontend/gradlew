@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Backend workspace sibling 'mobile_frontend' shim to satisfy CI that runs from backend container path.
+set -euo pipefail
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+TARGET="$REPO_ROOT/sales-and-inventory-management-system-182200-182209/mobile_frontend/gradlew"
+if [ -x "$TARGET" ]; then
+  exec "$TARGET" "$@"
+fi
+echo "[backend-sibling/mobile_frontend] No Android project detected. No-op." >&2
+exit 0

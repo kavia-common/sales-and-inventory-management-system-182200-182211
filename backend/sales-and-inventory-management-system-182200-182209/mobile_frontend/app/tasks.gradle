@@ -1,0 +1,10 @@
+tasks.register("printEnv") {
+    group = "help"
+    description = "Prints environment info for CI debugging."
+    doLast {
+        println("JAVA_HOME=" + System.getenv("JAVA_HOME"))
+        println("ANDROID_HOME=" + System.getenv("ANDROID_HOME"))
+        println("ANDROID_SDK_ROOT=" + System.getenv("ANDROID_SDK_ROOT"))
+        println("CI=" + System.getenv("CI"))
+    }
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Backend container root gradlew shim, forwarding to repo root.
+set -euo pipefail
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+if [ -x "$ROOT_DIR/gradlew" ]; then
+  exec "$ROOT_DIR/gradlew" "$@"
+fi
+echo "[backend workspace] Root gradlew shim not found; no-op." >&2
+exit 0

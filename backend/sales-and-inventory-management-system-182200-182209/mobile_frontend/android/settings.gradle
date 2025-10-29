@@ -1,0 +1,3 @@
+rootProject.name = "mobile_frontend_android_wrapper"
+include(":app")
+project(":app").projectDir = file("../app")

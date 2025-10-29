@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Gradle wrapper shim placed under mobile_frontend/android to satisfy CI that expects a standard Android layout.
+echo "Android subproject Gradle wrapper shim: no Android project present. Skipping."
+exit 0

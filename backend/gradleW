@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Alias shim; delegates to universal autofix wrapper
+set -euo pipefail
+bash ./gradlew-autofix "$@"

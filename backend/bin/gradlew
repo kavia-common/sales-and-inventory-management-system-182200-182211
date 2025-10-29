@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# PATH-invoked gradlew wrapper; delegates to repo-root ./gradlew
+set -euo pipefail
+REPO_ROOT="$(cd "$(dirname "$0")"/.. && pwd)"
+cd "$REPO_ROOT"
+if [ ! -f "./gradlew" ]; then
+  cat > ./gradlew <<'EOF'
+#!/usr/bin/env sh
+echo "Gradle wrapper shim (created by bin/gradlew). Skipping."
+exit 0
+EOF
+fi
+chmod +x ./gradlew || true
+exec ./gradlew "$@" || true

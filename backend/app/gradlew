@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Top-level app/gradlew shim for CI environments that assume an Android app/ directory.
+set -euo pipefail
+# Move to repository root, then run mobile frontend gradle without wrapper
+cd "$(dirname "$0")/.."
+bash sales-and-inventory-management-system-182200-182209/run_mobile_no_wrapper.sh "$@"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# CI alias at repo root: delegates to mobile frontend gradle without wrapper
+set -euo pipefail
+bash sales-and-inventory-management-system-182200-182209/run_mobile_no_wrapper.sh "$@"

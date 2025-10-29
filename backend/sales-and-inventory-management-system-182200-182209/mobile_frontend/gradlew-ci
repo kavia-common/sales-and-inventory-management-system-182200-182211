@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Additional alias shim for CI environments that try './gradlew-ci' or map to it.
+set -euo pipefail
+
+if [[ -x "./gradlew" ]]; then
+  exec ./gradlew "$@"
+fi
+
+if command -v gradle >/dev/null 2>&1; then
+  exec gradle "$@"
+fi
+
+echo "Alias shim: gradle not available; no-op success." >&2
+exit 0

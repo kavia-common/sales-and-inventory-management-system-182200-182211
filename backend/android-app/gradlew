@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Android app shim for CI; forwards to bootstrap runner from repository root
+set -euo pipefail
+cd "$(dirname "$0")/.."
+bash run_mobile_ci_bootstrap.sh

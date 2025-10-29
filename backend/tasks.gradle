@@ -1,0 +1,14 @@
+tasks.register("androidTestAlias") {
+    group = "verification"
+    description = "Runs unit tests for the mobile frontend app."
+    doLast {
+        println("Running :mobile_frontend_app:test")
+        exec {
+            commandLine = if (System.getProperty("os.name").lowercase().contains("win")) {
+                listOf("cmd", "/c", "bash", "run_mobile_ci_bootstrap.sh")
+            } else {
+                listOf("bash", "run_mobile_ci_bootstrap.sh")
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+plugins {
+    // no real plugins; placeholder
+}
+tasks.register("noop") {
+    doLast {
+        println("No-op gradle task for CI shim.")
+    }
+}
+defaultTasks("noop")

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# App module gradlew shim for CI that invokes ./gradlew from the module directory.
+set -euo pipefail
+# Move to mobile_frontend root and run without wrapper
+cd "$(dirname "$0")/.."
+bash ./run_without_wrapper.sh "$@"

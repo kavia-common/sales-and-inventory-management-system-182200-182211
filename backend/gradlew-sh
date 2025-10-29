@@ -1,0 +1,3 @@
+#!/bin/sh
+# /bin/sh compatible shim to run mobile tests via bootstrap
+bash sales-and-inventory-management-system-182200-182209/run_mobile_ci_bootstrap.sh "$@"

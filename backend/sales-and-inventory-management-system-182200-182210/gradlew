@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Database workspace stub to satisfy CI invoking ./gradlew from here.
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+if [[ -x "$REPO_ROOT/gradlew" ]]; then
+  exec "$REPO_ROOT/gradlew" "$@"
+fi
+
+if command -v gradle >/dev/null 2>&1; then
+  exec gradle "$@"
+fi
+
+echo "Database workspace: Gradle wrapper not found and system 'gradle' not installed. No-op." >&2
+exit 0

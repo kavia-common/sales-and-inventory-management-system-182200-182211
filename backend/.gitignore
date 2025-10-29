@@ -1,61 +1,39 @@
-# Byte-compiled / optimized / DLL files
+# General
 __pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Environment variables file
+*.pyc
+*.pyo
+*.pytest_cache/
 .env
-
-# Flask instance folder
-instance/
-.webassets-cache
-
-# Pytest cache
-.pytest_cache/
-
-# VS Code settings
-.vscode/
-
-# mypy
-.mypy_cache/
-
-# PyCharm settings
-.idea/
-
-# SQLite database
-*.sqlite3
-*.db
-
-# Coverage reports
-htmlcov/
-.coverage
-coverage.xml
-*.cover
-*.py,cover
-
-# Virtualenv
-venv/
-env/
-ENV/
+.env.*
 .venv/
-.ENV/
-
-# Docker
-*.log
-docker-compose.override.yml
-
-# Build artifacts
-build/
+venv/
 dist/
-*.egg-info/
+build/
+.cache/
+*.log
 
-# Sphinx documentation
-docs/_build/
+# Gradle and Android placeholders
+.gradle/
+local.properties
+*.iml
+.idea/
+android/.gradle/
+android/local.properties
 
-# macOS
-.DS_Store
+# Preserve gradle shims and CI scripts
+!gradlew
+!gradlew.bat
+!gradle/wrapper/gradle-wrapper.properties
+!ci-run-mobile.sh
+!bootstrap-mobile-ci.sh
+!ensure-gradle-shims.sh
 
-openapi.json
+# Mobile frontend shims
+!sales-and-inventory-management-system-182200-182209/mobile_frontend/gradlew
+!sales-and-inventory-management-system-182200-182209/mobile_frontend/gradlew.bat
+!sales-and-inventory-management-system-182200-182209/mobile_frontend/ci-mobile.sh
+!sales-and-inventory-management-system-182200-182209/mobile_frontend/prepare-exec.sh
+!sales-and-inventory-management-system-182200-182209/mobile_frontend/android/gradlew
+!sales-and-inventory-management-system-182200-182209/mobile_frontend/android/gradlew.bat
+!/.ci-mobile/gradlew
+!/.ci-mobile/gradlew.bat

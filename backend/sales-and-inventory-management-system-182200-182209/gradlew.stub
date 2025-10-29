@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Additional stub that CI can rename or symlink to 'gradlew' if necessary.
+set -euo pipefail
+exec bash "$(dirname "$0")/run-check.sh" "$@"

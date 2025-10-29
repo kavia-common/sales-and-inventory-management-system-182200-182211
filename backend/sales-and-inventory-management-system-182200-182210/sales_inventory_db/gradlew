@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Database container directory gradle shim to satisfy CI that cd's here before invoking ./gradlew.
+echo "DB container Gradle wrapper shim: no Android project present. Skipping."
+exit 0

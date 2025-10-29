@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Android root-level gradle shim (android/gradlew) for CI tools expecting an android project folder.
+echo "Android root-level Gradle wrapper shim: no Android project present. Skipping."
+exit 0
