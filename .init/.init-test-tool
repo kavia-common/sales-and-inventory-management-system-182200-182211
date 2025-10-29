@@ -1,0 +1,4 @@
+{
+    "command": "pytest",
+    "working_directory": "/home/kavia/workspace/code-generation/sales-and-inventory-management-system-182200-182211/backend"
+}
